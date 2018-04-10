@@ -3,9 +3,9 @@
   "displayName": "fimports",
   "description": "",
   "version": "0.0.1",
-  "publisher": "Jairo",
+  "publisher": "kidandcat",
   "engines": {
-    "vscode": "^1.22.0"
+    "vscode": "^1.20.0"
   },
   "categories": ["Other"],
   "activationEvents": ["onLanguage:javascript", "onLanguage:typescript"],
@@ -23,5 +23,9 @@
     "tslint": "^5.8.0",
     "@types/node": "^7.0.43",
     "@types/mocha": "^2.2.42"
+  },
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/kidandcat/fimports"
   }
 }
