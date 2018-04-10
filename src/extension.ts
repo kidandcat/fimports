@@ -169,7 +169,9 @@ class WordCounter {
               if (workspace.workspaceFolders) {
                 res = res.split(workspace.workspaceFolders[0].name)[1];
               }
-              res.split(".").pop();
+              const aux = res.split(".");
+              aux.pop();
+              res = aux.join(".");
               a(res);
             }
           });
