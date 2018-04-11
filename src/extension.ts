@@ -64,7 +64,9 @@ class WordCounter {
     ) {
       this._statusBarItem.show();
       this._statusBarItem.text = "working " + working;
-      if (!working) this._work(doc, editor);
+      if (!working) {
+        this._work(doc, editor);
+      }
     } else {
       this._statusBarItem.hide();
     }
@@ -148,7 +150,7 @@ class WordCounter {
     return new Promise((a, r) => {
       working = true;
       workspace
-        .findFiles("**/*.{js,jsx,ts,tsx}", "**/node_modules/**", 100000)
+        .findFiles("src/**/*.{js,jsx,ts,tsx}", "**/node_modules/**", 100000)
         .then((res: Uri[]) => {
           res.forEach((f: Uri) => {
             this._statusBarItem.text = "Processing " + f.fsPath;
