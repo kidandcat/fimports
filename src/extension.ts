@@ -56,7 +56,12 @@ class WordCounter {
 
     let doc = editor.document;
 
-    if (doc.languageId === "javascript" || doc.languageId === "typescript") {
+    if (
+      doc.languageId === "javascript" ||
+      doc.languageId === "typescript" ||
+      doc.languageId === "javascriptreact" ||
+      doc.languageId === "typescriptreact"
+    ) {
       this._statusBarItem.show();
       this._statusBarItem.text = "working " + working;
       if (!working) this._work(doc, editor);
