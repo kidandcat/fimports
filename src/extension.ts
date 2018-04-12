@@ -63,7 +63,9 @@ class WordCounter {
       doc.languageId === "typescriptreact"
     ) {
       this._statusBarItem.show();
-      this._statusBarItem.text = "working " + working;
+      this._statusBarItem.text = working
+        ? "Fimports ✔"
+        : "Fimports: working...";
       if (!working) {
         this._work(doc, editor);
       }
@@ -123,10 +125,10 @@ class WordCounter {
                       } else {
                         stopWorking();
                       }
-                      this._statusBarItem.text = "Done";
+                      this._statusBarItem.text = "Fimports: Done";
                     })
                     .catch((r: string) => {
-                      this._statusBarItem.text = "Not found " + r;
+                      this._statusBarItem.text = "Fimports: Not found " + r;
                       stopWorking();
                     });
                 }
@@ -163,13 +165,6 @@ class WordCounter {
                   .pop()
                   .indexOf("export")
               ) {
-                window.showInformationMessage(
-                  "Export not found in:" +
-                    data
-                      .split(value)[0]
-                      .split("\n")
-                      .pop()
-                );
                 return;
               }
               let res = f.fsPath;

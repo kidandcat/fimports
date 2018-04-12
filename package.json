@@ -2,7 +2,7 @@
   "name": "fimports",
   "displayName": "fimports",
   "description": "",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "publisher": "kidandcat",
   "engines": {
     "vscode": "^1.20.0"

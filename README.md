@@ -42,4 +42,8 @@ You can see the status in the left side of the bottom status bar.
 
 * Use cdn.rawgit.com for GIF
 
+## 0.0.13
+
+* Better logs
+
 ---
