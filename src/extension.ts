@@ -63,7 +63,7 @@ class WordCounter {
       doc.languageId === "typescriptreact"
     ) {
       this._statusBarItem.show();
-      this._statusBarItem.text = working
+      this._statusBarItem.text = !working
         ? "Fimports ✔"
         : "Fimports: working...";
       if (!working) {
