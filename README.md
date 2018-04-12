@@ -2,7 +2,7 @@
 
 This extension autocompletes the Path on imports
 
-![](https://github.com/kidandcat/fimports/raw/master/images/fimports.gif)
+![](https://cdn.rawgit.com/kidandcat/fimports/master/images/fimports.gif)
 
 ## How to use
 
@@ -37,5 +37,9 @@ You can see the status in the left side of the bottom status bar.
 ## 0.0.11
 
 * Add gif
+
+## 0.0.12
+
+* Use cdn.rawgit.com for GIF
 
 ---
