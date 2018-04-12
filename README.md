@@ -16,18 +16,20 @@ You can see the status in the left side of the bottom status bar.
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
+## 0.0.1
 
-### 1.0.0
+* Initial release
 
-Initial release of ...
+## 0.0.3
 
-### 1.0.1
+* Now the extension is not added to the import
 
-Fixed issue #.
+## 0.0.7
 
-### 1.1.0
+* Search only in `src` folder
 
-Added features X, Y, and Z.
+## 0.0.8
+
+* Change readme
 
 ---
