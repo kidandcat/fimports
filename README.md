@@ -46,4 +46,8 @@ You can see the status in the left side of the bottom status bar.
 
 * Better logs
 
+## 0.0.14
+
+* GIF 55mb -> 7mb
+
 ---
