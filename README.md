@@ -2,6 +2,8 @@
 
 This extension autocompletes the Path on imports
 
+![](https://github.com/kidandcat/fimports/images/fimports.gif.png)
+
 ## How to use
 
 Write `import { MyObject }`
