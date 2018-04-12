@@ -2,7 +2,7 @@
 
 This extension autocompletes the Path on imports
 
-![](https://github.com/kidandcat/fimports/images/fimports.gif)
+![](https://github.com/kidandcat/fimports/raw/master/images/fimports.gif)
 
 ## How to use
 
@@ -33,5 +33,9 @@ You can see the status in the left side of the bottom status bar.
 ## 0.0.8
 
 * Change readme
+
+## 0.0.11
+
+* Add gif
 
 ---
