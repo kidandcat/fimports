@@ -85,7 +85,7 @@ class WordCounter {
       if (docContent !== "") {
         const lines = docContent.split("\n");
         for (let l of lines) {
-          if (~l.indexOf("import")) {
+          if (~l.indexOf("import ")) {
             if (~l.indexOf("{") && ~l.indexOf("}") && !~l.indexOf("from")) {
               const values = l
                 .split("{")[1]
