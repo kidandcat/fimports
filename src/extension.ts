@@ -166,7 +166,7 @@ class Fimports {
           res.forEach((f: Uri) => {
             this._statusBarItem.text = "Processing " + f.fsPath;
             const data = fs.readFileSync(f.fsPath, "utf8");
-            if (~data.indexOf(` ${value} `)) {
+            if (~data.indexOf(` ${value} `) || ~data.indexOf(` ${value};`)) {
               if (
                 !~data
                   .split(value)[0]
