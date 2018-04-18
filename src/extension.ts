@@ -13,8 +13,7 @@ import {
   workspace,
   TextEdit,
   Range,
-  Uri,
-  ConfigurationTarget
+  Uri
 } from "vscode";
 
 const fs = require("fs");
