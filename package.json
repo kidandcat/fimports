@@ -2,7 +2,7 @@
   "name": "fimports",
   "displayName": "fimports",
   "description": "",
-  "icon": "images/logo.svg",
+  "icon": "images/logo.png",
   "version": "0.0.20",
   "publisher": "kidandcat",
   "engines": {
