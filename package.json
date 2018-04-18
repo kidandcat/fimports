@@ -3,7 +3,7 @@
   "displayName": "fimports",
   "description": "",
   "icon": "images/logo.png",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "publisher": "kidandcat",
   "engines": {
     "vscode": "^1.20.0"

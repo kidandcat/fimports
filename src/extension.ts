@@ -119,7 +119,9 @@ class Fimports {
                                 : lin.length
                             }
                           },
-                          ` from "${url}"${~lin.indexOf(";") ? "" : ";"}`
+                          ` from "${url.split("\\").join("/")}"${
+                            ~lin.indexOf(";") ? "" : ";"
+                          }`
                         );
                         stopWorking();
                       } else {
