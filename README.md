@@ -1,4 +1,4 @@
-# fimports README
+# fimports
 
 This extension autocompletes the Path on imports
 
