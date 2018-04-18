@@ -13,7 +13,8 @@ import {
   workspace,
   TextEdit,
   Range,
-  Uri
+  Uri,
+  ConfigurationTarget
 } from "vscode";
 
 const fs = require("fs");
@@ -26,22 +27,22 @@ let working = false;
 // controlled by the activation events defined in package.json.
 export function activate(context: ExtensionContext) {
   // create a new word counter
-  let wordCounter = new WordCounter();
-  let controller = new WordCounterController(wordCounter);
+  let fimports = new Fimports();
+  let controller = new FimportsController(fimports);
 
   // Add to a list of disposables which are disposed when this extension is deactivated.
   context.subscriptions.push(controller);
-  context.subscriptions.push(wordCounter);
+  context.subscriptions.push(fimports);
 }
 
-class WordCounter {
+class Fimports {
   private _statusBarItem: StatusBarItem;
 
   constructor() {
     this._statusBarItem = window.createStatusBarItem(StatusBarAlignment.Left);
   }
 
-  public updateWordCount() {
+  public init() {
     // Create as needed
     if (!this._statusBarItem) {
       this._statusBarItem = window.createStatusBarItem(StatusBarAlignment.Left);
@@ -119,7 +120,7 @@ class WordCounter {
                                 : lin.length
                             }
                           },
-                          ` from "${url}"`
+                          ` from "${url}"${~lin.indexOf(";") ? "" : ";"}`
                         );
                         stopWorking();
                       } else {
@@ -151,8 +152,15 @@ class WordCounter {
   public _search(value: string): Promise<string> {
     return new Promise((a, r) => {
       working = true;
+      const sourceCodeFolder = workspace
+        .getConfiguration("fimports")
+        .get("sourceCodeFolder");
       workspace
-        .findFiles("src/**/*.{js,jsx,ts,tsx}", "**/node_modules/**", 100000)
+        .findFiles(
+          sourceCodeFolder + "/**/*.{js,jsx,ts,tsx}",
+          "**/node_modules/**",
+          100000
+        )
         .then((res: Uri[]) => {
           res.forEach((f: Uri) => {
             this._statusBarItem.text = "Processing " + f.fsPath;
@@ -187,11 +195,11 @@ class WordCounter {
   }
 }
 
-class WordCounterController {
-  private _wordCounter: WordCounter;
+class FimportsController {
+  private _wordCounter: Fimports;
   private _disposable: Disposable;
 
-  constructor(wordCounter: WordCounter) {
+  constructor(wordCounter: Fimports) {
     this._wordCounter = wordCounter;
 
     // subscribe to selection change and editor activation events
@@ -199,8 +207,7 @@ class WordCounterController {
     window.onDidChangeTextEditorSelection(this._onEvent, this, subscriptions);
     window.onDidChangeActiveTextEditor(this._onEvent, this, subscriptions);
 
-    // update the counter for the current file
-    this._wordCounter.updateWordCount();
+    this._wordCounter.init();
 
     // create a combined disposable from both event subscriptions
     this._disposable = Disposable.from(...subscriptions);
@@ -211,7 +218,7 @@ class WordCounterController {
   }
 
   private _onEvent() {
-    this._wordCounter.updateWordCount();
+    this._wordCounter.init();
   }
 }
 

@@ -50,4 +50,8 @@ You can see the status in the left side of the bottom status bar.
 
 * GIF 55mb -> 7mb
 
+## 0.0.17
+
+* Configuration for source code folder
+
 ---

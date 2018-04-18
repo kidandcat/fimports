@@ -2,7 +2,7 @@
   "name": "fimports",
   "displayName": "fimports",
   "description": "",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "publisher": "kidandcat",
   "engines": {
     "vscode": "^1.20.0"
@@ -32,5 +32,18 @@
   "repository": {
     "type": "github",
     "url": "https://github.com/kidandcat/fimports"
+  },
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "Fimports configuration",
+      "properties": {
+        "fimports.sourceCodeFolder": {
+          "type": "string",
+          "default": "src",
+          "description": "Source folder to look for imports."
+        }
+      }
+    }
   }
 }
