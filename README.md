@@ -2,7 +2,7 @@
 
 This extension autocompletes the Path on imports
 
-![](https://cdn.rawgit.com/kidandcat/fimports/master/images/fimports.gif)
+![](https://github.com/kidandcat/fimports/blob/master/images/fimports.gif?raw=true)
 
 ## How to use
 
